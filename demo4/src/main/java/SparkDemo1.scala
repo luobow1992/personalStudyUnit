@@ -16,8 +16,8 @@ object SparkDemo1 {
     val person = sparkSession.read.json("demo4/src/main/resources/person.json")
     // 显示json文件中的数据
     person.show()
-    // 将age字段都加1
-    person.select(person("age")+1).show()
+    // 将age字段都加1,并更改别名
+    person.select((person("age")+1).alias("my_age")).show()
     //使用spark在内存中创建一个表"TEST_PERSON_TABLE"
     person.createOrReplaceTempView("TEST_PERSON_TABLE")
     //执行一些sql查询

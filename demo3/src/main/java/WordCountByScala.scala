@@ -15,7 +15,7 @@ object WordCountByScala {
     val conf = new SparkConf().setAppName("word-count").setMaster("local[4]")
     val sc = new SparkContext(conf)
     val line = sc.textFile("demo3/src/main/resources/word.txt")
-    line.flatMap(_.split(" ")).map((_, 1)).reduceByKey(_ + _).collect().foreach(println)
+    line.flatMap(_.split(" ")).map((_, 1)).collect().foreach(println)
     sc.stop()
   }
 }

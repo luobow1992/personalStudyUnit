@@ -31,14 +31,14 @@ public final class WordCountByJava {
 
     public static void main(String[] args) throws Exception {
 
-        SparkConf conf = new SparkConf().setAppName("JavaWordCount");
+        SparkConf conf = new SparkConf().setAppName("JavaWordCount").setMaster("local[4]");
         JavaSparkContext sc = new JavaSparkContext(conf);
-        JavaRDD<String> lines = sc.textFile("demo3/src/main/resources/word.txt",1);
+        JavaRDD<String> lines = sc.textFile("demo3/src/main/resources/word.txt", 1);
         JavaRDD<String> words = lines.flatMap(new FlatMapFunction<String, String>() {
 
             private static final long serialVersionUID = 1L;
 
-           @Override
+            @Override
             public Iterator<String> call(String s) {
                 return Arrays.asList(SPACE.split(s)).iterator();
             }

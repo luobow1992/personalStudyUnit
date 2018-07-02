@@ -10,10 +10,9 @@
         <module name="demo2" />
         <module name="demo3" />
         <module name="demo4" />
+        <module name="demo5" />
+        <module name="demo6" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel>
-      <module name="ScalaStudy" target="1.5" />
-    </bytecodeTargetLevel>
   </component>
 </project>

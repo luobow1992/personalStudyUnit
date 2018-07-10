@@ -4,3 +4,5 @@ demo3:Spark的基础练习【比如wordcount】
 demo4:Spark SQL 的学习
 demo5:java8 lambda学习
 demo6:Java 反射学习
+demo7:DelayQueue学习
+demo8:lombok学习

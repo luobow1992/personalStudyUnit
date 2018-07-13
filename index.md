@@ -6,3 +6,5 @@ demo5:java8 lambda学习
 demo6:Java 反射学习
 demo7:DelayQueue学习
 demo8:lombok学习
+demo9:java 范型学习
+demo10:RPC学习【Java wsdl实现】

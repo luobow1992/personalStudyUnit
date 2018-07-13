@@ -34,10 +34,9 @@ public class Test2 {
     public static void addRight() throws Exception{
         List<String> list = new ArrayList<String>();
         Class clazz = list.getClass();
-        Object object = clazz.newInstance();
         Method method = clazz.getMethod("add",Object.class);
-        method.invoke(object,11);
-        method.invoke(object,"你好");
-        System.out.println(object.toString());
+        method.invoke(list,11);
+        method.invoke(list,"你好");
+        System.out.println(list.toString());
     }
 }

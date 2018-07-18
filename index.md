@@ -8,3 +8,5 @@ demo7:DelayQueue学习
 demo8:lombok学习
 demo9:java 范型学习
 demo10:RPC学习【Java wsdl实现】
+demo11:activemq的demo测试
+demo12:storm统计单词个数【wordcount】

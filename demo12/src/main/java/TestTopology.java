@@ -26,8 +26,9 @@ public class TestTopology {
     public static void main(String[] args) {
         TopologyBuilder builder = new TopologyBuilder();
         builder.setSpout("statementSpout", new StatementSpout(), 1);
-        builder.setBolt("statementSplitBolt", new StatementSplitBolt(), 2).shuffleGrouping("statementSpout");
-        builder.setBolt("wordCountBolt", new WordCountBolt(), 1).fieldsGrouping("statementSplitBolt", new Fields("word"));
+        builder.setBolt("statementSplitBolt", new StatementSplitBolt(), 2).shuffleGrouping("statementSpout","stream1");
+//        builder.setBolt("wordCountBolt", new WordCountBolt(), 1).fieldsGrouping("statementSplitBolt", new Fields("word"));
+        builder.setBolt("wordCountBolt", new WordCountBolt(), 1).directGrouping("statementSplitBolt");
 
         Config conf = new Config();
         conf.setDebug(false);

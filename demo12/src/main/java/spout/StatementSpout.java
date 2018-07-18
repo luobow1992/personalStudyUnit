@@ -38,7 +38,9 @@ public class StatementSpout extends BaseRichSpout {
 
     @Override
     public void declareOutputFields(OutputFieldsDeclarer declarer) {
-        declarer.declare(new Fields("statement"));
+        //可以声明对应的streamId信息,不写也可以，默认是default
+        declarer.declareStream("stream1",new Fields("statement"));
+//        declarer.declare(new Fields("statement"));
     }
 
     @Override
@@ -59,7 +61,7 @@ public class StatementSpout extends BaseRichSpout {
     public void nextTuple() {
         if (!mqStatement.isEmpty()) {
             try {
-                this.collector.emit(new Values(mqStatement.take()));
+                this.collector.emit("stream1",new Values(mqStatement.take()));
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
@@ -67,4 +69,5 @@ public class StatementSpout extends BaseRichSpout {
             return;
         }
     }
+
 }

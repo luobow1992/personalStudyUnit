@@ -49,18 +49,8 @@ public class ReetrantReadWriteLockDemo {
     public static void main(String[] args) {
         ReadWriteDemo readWriteDemo = new ReadWriteDemo();
 
-        Runnable writeRunnable = new Runnable() {
-            @Override
-            public void run() {
-                readWriteDemo.write();
-            }
-        };
-        Runnable readRunnable = new Runnable() {
-            @Override
-            public void run() {
-                readWriteDemo.read();
-            }
-        };
+        Runnable writeRunnable = ()->readWriteDemo.write();
+        Runnable readRunnable = ()-> readWriteDemo.read();
 
         Thread[] threads = new Thread[3];
 

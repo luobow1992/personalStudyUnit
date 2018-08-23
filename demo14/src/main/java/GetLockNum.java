@@ -17,8 +17,7 @@ import java.util.concurrent.locks.ReentrantLock;
 public class GetLockNum {
     public static ReentrantLock lock = new ReentrantLock();
 
-
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception{
 
         //ReentrantLock和synchronized一样，锁都是可重入的，
         // 同一线程的同一个ReentrantLock的lock()方法被调用了多少次，
